@@ -9,7 +9,7 @@
       </ul>
     </div>
     <div class="w-3/4 p-4">
-      <h2 class="text-2xl font-bold mb-4">{{ selectedUser?.name }}'s workout progress</h2>
+      <h2 *ngIf="selectedUser" class="text-2xl font-bold mb-4">{{ selectedUser.name }}'s workout progress</h2>
       <p-chart *ngIf="selectedUser" type="bar" [data]="barChartData" [options]="barChartOptions"></p-chart>
     </div>
   </div>
