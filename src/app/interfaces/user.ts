@@ -1,4 +1,4 @@
-interface Workout {
+export interface Workout {
     type: string;
     minutes: number;
 }

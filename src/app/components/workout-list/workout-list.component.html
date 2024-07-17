@@ -1,1 +1,69 @@
-<p>workout-list works!</p>
+<div class="p-6">
+    <!-- Search and Filter -->
+    <div class="flex flex-wrap md:justify-between mb-4">
+      <input
+        type="text"
+        placeholder="Search"
+        class="border rounded px-4 py-2 w-1/2"
+        [(ngModel)]="searchTerm"
+        (ngModelChange)="onSearchChange()"
+      />
+      <div>
+        <label for="selectedWorkoutType" class="text-gray-700 font-medium mx-2">Filter by Workout Type</label>
+        <select
+            class="border rounded px-4 py-2"
+            [(ngModel)]="selectedWorkoutType"
+            (ngModelChange)="onFilterChange()"
+        >
+            <option value="">All</option>
+            <option *ngFor="let type of workoutTypes" [value]="type">{{ type }}</option>
+        </select>
+      </div>
+    </div>
+  
+    <!-- User Table -->
+    <table class="w-full border-collapse">
+      <thead>
+        <tr>
+          <th class="border p-2">Name</th>
+          <th class="border p-2">Workouts</th>
+          <th class="border p-2">Number of Workouts</th>
+          <th class="border p-2">Total Workout Minutes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of paginatedUsers">
+          <td class="border p-2">{{ user.name }}</td>
+          <td class="border p-2">{{ getWorkoutTypes(user.workouts) }}</td>
+          <td class="border p-2">{{ user.workouts.length }}</td>
+          <td class="border p-2">{{ getTotalMinutes(user.workouts) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Pagination Controls -->
+    <div class="flex flex-wrap md:justify-between items-center mt-4">
+      <div class="my-2">
+        <button
+          class="border rounded px-4 py-2 mr-2"
+          [disabled]="currentPage === 1"
+          (click)="previousPage()"
+        >
+          &laquo; Previous
+        </button>
+        <button
+          class="border rounded px-4 py-2"
+          [disabled]="currentPage === totalPages"
+          (click)="nextPage()"
+        >
+          Next &raquo;
+        </button>
+      </div>
+      <div class="my-2">
+        <span>Items per page:</span>
+        <select class="border rounded px-4 py-2" [(ngModel)]="itemsPerPage" (ngModelChange)="updatePagination()">
+          <option *ngFor="let size of pageSizes" [value]="size">{{ size }}</option>
+        </select>
+      </div>
+    </div>
+  </div>  
