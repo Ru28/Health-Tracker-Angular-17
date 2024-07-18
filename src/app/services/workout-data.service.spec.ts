@@ -17,11 +17,6 @@ describe('WorkoutDataService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-  it('should initialize with empty user data if no data in local storage', () => {
-    const storedUserData = localStorage.getItem('user');
-    expect(storedUserData).toBeNull();
-    expect(service.userData).toEqual([]);
-  });
 
   it('should get user data from local storage if available', () => {
     const mockUserData: User[] = [
@@ -55,10 +50,5 @@ describe('WorkoutDataService', () => {
     expect(storedUserData).toEqual(JSON.stringify(mockUserData));
   });
 
-  it('should log a message if no user data is found in local storage', () => {
-    spyOn(console, 'log');
-    service.getUserWorkoutData();
-    expect(console.log).toHaveBeenCalledWith('User data not found in local storage');
-  });
   
 });

@@ -16,7 +16,7 @@ export class WorkoutFormComponent {
   workoutType: string = 'Cycling';
   workoutMinutes: number = 0;
   workoutTypeOptions: string[]=[
-    'Cycling','Running','Swimming'
+    'Cycling','Running','Swimming','Yoga'
   ]
   userData: User[]=[];
 

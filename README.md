@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Project Hosted On Vercel. Click below link
 - [health-tracker-angular-17](https://health-tracker-angular-17.vercel.app/)
-- please first fill the workout form after you will able to see all data on list and workout minutes vs activity graphs on Progress tab.
+
 
 ### As per assignment task given fyle , I developed Health Challenge Tracker using Angular 17 (LTS) Version
 - My Approach to making this Assignment.
@@ -24,7 +24,7 @@ Project Hosted On Vercel. Click below link
 
 # Unit Test Cases Report
 -- I have writtern test cases for One Service and Two Components
-![unit test case report](https://github.com/user-attachments/assets/34a4138d-9a37-4e07-a925-4c4004c52be2)
+![Unit testcases coverage report](https://github.com/user-attachments/assets/b3c63f08-4aeb-41ee-bd49-17adb3d8636b)
 
 
 
